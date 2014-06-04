@@ -1,0 +1,88 @@
+/*IMPORTS*/
+@import "compass";
+
+/*VARIABLES*/
+$light-blue: #BFEFFF;
+$white: #FFFFFF;
+$orange: #FC4000;
+$subtitles: "shelter_meregular";
+$titles: "voluptate_demoregular";
+
+/*FONTS*/
+@font-face {
+    font-family: 'voluptate_demoregular';
+    src: url('fonts/voluptate_demo-webfont.eot');
+    src: url('fonts/voluptate_demo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/voluptate_demo-webfont.woff') format('woff'),
+         url('fonts/voluptate_demo-webfont.ttf') format('truetype'),
+         url('fonts/voluptate_demo-webfont.svg#voluptate_demoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'dk_sleepy_timeregular';
+    src: url('fonts/dk_sleepy_time-webfont.eot');
+    src: url('fonts/dk_sleepy_time-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/dk_sleepy_time-webfont.woff') format('woff'),
+         url('fonts/dk_sleepy_time-webfont.ttf') format('truetype'),
+         url('fonts/dk_sleepy_time-webfont.svg#dk_sleepy_timeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'shelter_meregular';
+    src: url('fonts/shelter_me-webfont.eot');
+    src: url('fonts/shelter_me-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/shelter_me-webfont.woff') format('woff'),
+         url('fonts/shelter_me-webfont.ttf') format('truetype'),
+         url('fonts/shelter_me-webfont.svg#shelter_meregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*LAYER 0*/
+body{
+	background-color: $light-blue;
+	background-image: url('../imgs/LEVEL0_cloud.png');
+	background-repeat: repeat;
+	background-position: fixed;
+}
+
+.level1{
+	.title{
+		position: relative;
+		left: 50%;
+		width: 2px;
+		margin-left: -1px;
+		height: 460px;
+		margin-top: 128px;
+		.story{
+			font-family: $subtitles;
+			font-size: 33px;
+			position: absolute;
+			width: 150px;
+			left: -280px;
+		}
+		.ceci, .andre{
+			font-family: $titles;
+			font-size: 90px;
+		}
+
+		.dot{
+			color: $white;
+			font-size: 40px;
+			background-color: $orange;
+			text-align: center;
+			line-height: 86px;
+			width: 86px;
+			height: 86px;
+			@include opacity(0.7);
+			@include border-radius(43px, 43px);
+		}
+	}
+}
