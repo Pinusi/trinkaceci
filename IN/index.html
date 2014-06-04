@@ -9,7 +9,13 @@
 	<script src="scripts/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
 	<script src="scripts/bower_components/ScrollMagic/js/jquery.scrollmagic.js"></script>
 	<!-- endbower -->
+	<script src="scripts/bower_components/ScrollMagic/js/jquery.scrollmagic.debug.js"></script>
 	<script src="scripts/scripts.min.js"></script>
+	<script>
+	$(document).ready(function($) {
+		includeTweens();
+	});
+</script>
 </head>
 <body>
 	<div class="level1">
@@ -25,7 +31,9 @@
 				<span class="other_letter">ndrea</span>
 			</div>
 		</div>
-		<div class="line_0"></div>
+		<div class="line_0">
+			
+		</div>
 		<div class="line_1"></div>
 		<div class="line_2"></div>
 		<div class="line_3"></div>
@@ -40,6 +48,12 @@
 		<div class="line_12"></div>
 		<div class="line_13"></div>
 		<div class="line_14"></div>
+		<div id="trigger_bottom"></div>
+		<div class="bottom" id="bottom">
+			<div class="andre"></div>
+			<div class="ceci"></div>
+			<div class="erba"></div>
+		</div>
 	</div>
 </body>
 </html>
