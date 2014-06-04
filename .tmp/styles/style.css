@@ -1,1 +1,169 @@
-@font-face{font-family:'voluptate_demoregular';src:url("fonts/voluptate_demo-webfont.eot");src:url("fonts/voluptate_demo-webfont.eot?#iefix") format("embedded-opentype"),url("fonts/voluptate_demo-webfont.woff") format("woff"),url("fonts/voluptate_demo-webfont.ttf") format("truetype"),url("fonts/voluptate_demo-webfont.svg#voluptate_demoregular") format("svg");font-weight:normal;font-style:normal}@font-face{font-family:'dk_sleepy_timeregular';src:url("fonts/dk_sleepy_time-webfont.eot");src:url("fonts/dk_sleepy_time-webfont.eot?#iefix") format("embedded-opentype"),url("fonts/dk_sleepy_time-webfont.woff") format("woff"),url("fonts/dk_sleepy_time-webfont.ttf") format("truetype"),url("fonts/dk_sleepy_time-webfont.svg#dk_sleepy_timeregular") format("svg");font-weight:normal;font-style:normal}@font-face{font-family:'shelter_meregular';src:url("fonts/shelter_me-webfont.eot");src:url("fonts/shelter_me-webfont.eot?#iefix") format("embedded-opentype"),url("fonts/shelter_me-webfont.woff") format("woff"),url("fonts/shelter_me-webfont.ttf") format("truetype"),url("fonts/shelter_me-webfont.svg#shelter_meregular") format("svg");font-weight:normal;font-style:normal}body{background-color:#bfefff;background-image:url("../imgs/LEVEL0_cloud.png");background-repeat:repeat;background-position:fixed}.level1 .title{position:relative;left:50%;width:2px;margin-left:-1px;height:460px;margin-top:128px}.level1 .title .story{font-family:"shelter_meregular";font-size:33px;position:absolute;width:150px;left:-280px}.level1 .title .ceci,.level1 .title .andre{font-family:"voluptate_demoregular";font-size:90px}.level1 .title .dot{color:#fff;font-size:40px;background-color:#fc4000;text-align:center;line-height:86px;width:86px;height:86px;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=70);opacity:0.7;-webkit-border-radius:43px 43px;-moz-border-radius:43px / 43px;border-radius:43px / 43px}
+/*IMPORTS*/
+/*VARIABLES*/
+/*FONTS*/
+@font-face {
+  font-family: 'voluptate_demoregular';
+  src: url("fonts/voluptate_demo-webfont.eot");
+  src: url("fonts/voluptate_demo-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/voluptate_demo-webfont.woff") format("woff"), url("fonts/voluptate_demo-webfont.ttf") format("truetype"), url("fonts/voluptate_demo-webfont.svg#voluptate_demoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dk_sleepy_timeregular';
+  src: url("fonts/dk_sleepy_time-webfont.eot");
+  src: url("fonts/dk_sleepy_time-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/dk_sleepy_time-webfont.woff") format("woff"), url("fonts/dk_sleepy_time-webfont.ttf") format("truetype"), url("fonts/dk_sleepy_time-webfont.svg#dk_sleepy_timeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'shelter_meregular';
+  src: url("fonts/shelter_me-webfont.eot");
+  src: url("fonts/shelter_me-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/shelter_me-webfont.woff") format("woff"), url("fonts/shelter_me-webfont.ttf") format("truetype"), url("fonts/shelter_me-webfont.svg#shelter_meregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*LAYER 0*/
+/* line 49, ../../IN/styles/style.scss */
+body {
+  background-color: #bfefff;
+  background-image: url("../imgs/LEVEL0_cloud.png");
+  background-repeat: repeat;
+  background-attachment: fixed;
+  margin: 0px;
+}
+
+/* line 57, ../../IN/styles/style.scss */
+.level1 {
+  padding-top: 128px;
+}
+/* line 59, ../../IN/styles/style.scss */
+.level1 .title {
+  position: relative;
+  left: 50%;
+  width: 470px;
+  margin-left: -235px;
+  height: 150px;
+}
+/* line 65, ../../IN/styles/style.scss */
+.level1 .title .story {
+  font-family: "shelter_meregular";
+  font-size: 33px;
+  position: absolute;
+  width: 150px;
+  left: 0px;
+}
+/* line 72, ../../IN/styles/style.scss */
+.level1 .title .ceciandre, .level1 .title .ceci, .level1 .title .andre {
+  font-family: "voluptate_demoregular";
+  font-size: 90px;
+  position: absolute;
+  width: 300px;
+}
+/* line 77, ../../IN/styles/style.scss */
+.level1 .title .ceciandre .first_letter, .level1 .title .ceci .first_letter, .level1 .title .andre .first_letter {
+  font-size: 150px;
+}
+/* line 81, ../../IN/styles/style.scss */
+.level1 .title .ceciandre .other_letter, .level1 .title .ceci .other_letter, .level1 .title .andre .other_letter {
+  margin-left: -22px;
+}
+/* line 86, ../../IN/styles/style.scss */
+.level1 .title .ceci {
+  top: -11px;
+  left: 0px;
+}
+/* line 92, ../../IN/styles/style.scss */
+.level1 .title .andre {
+  top: 76px;
+  left: 190px;
+}
+/* line 98, ../../IN/styles/style.scss */
+.level1 .title .dot {
+  color: white;
+  font-size: 40px;
+  background-color: #fc4000;
+  text-align: center;
+  line-height: 86px;
+  width: 86px;
+  height: 86px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-border-radius: 43px 43px;
+  -moz-border-radius: 43px / 43px;
+  border-radius: 43px / 43px;
+  position: absolute;
+  top: 90px;
+  left: 259px;
+}
+/* line 113, ../../IN/styles/style.scss */
+.level1 .line, .level1 .line_0, .level1 .line_1, .level1 .line_2, .level1 .line_3, .level1 .line_4, .level1 .line_5, .level1 .line_6, .level1 .line_7, .level1 .line_8, .level1 .line_9, .level1 .line_10, .level1 .line_11, .level1 .line_12, .level1 .line_13, .level1 .line_14 {
+  position: relative;
+  background-repeat: no-repeat;
+  width: 846px;
+  height: 484px;
+  left: 50%;
+  margin-left: -423px;
+}
+/* line 121, ../../IN/styles/style.scss */
+.level1 .line_0 {
+  background-image: url("../imgs/LAYER1_line_r1_c1.png");
+}
+/* line 125, ../../IN/styles/style.scss */
+.level1 .line_1 {
+  background-image: url("../imgs/LAYER1_line_r2_c1.png");
+}
+/* line 129, ../../IN/styles/style.scss */
+.level1 .line_2 {
+  background-image: url("../imgs/LAYER1_line_r3_c1.png");
+}
+/* line 133, ../../IN/styles/style.scss */
+.level1 .line_3 {
+  background-image: url("../imgs/LAYER1_line_r4_c1.png");
+}
+/* line 137, ../../IN/styles/style.scss */
+.level1 .line_4 {
+  background-image: url("../imgs/LAYER1_line_r5_c1.png");
+}
+/* line 141, ../../IN/styles/style.scss */
+.level1 .line_5 {
+  background-image: url("../imgs/LAYER1_line_r6_c1.png");
+}
+/* line 145, ../../IN/styles/style.scss */
+.level1 .line_6 {
+  background-image: url("../imgs/LAYER1_line_r7_c1.png");
+}
+/* line 149, ../../IN/styles/style.scss */
+.level1 .line_7 {
+  background-image: url("../imgs/LAYER1_line_r8_c1.png");
+}
+/* line 153, ../../IN/styles/style.scss */
+.level1 .line_8 {
+  background-image: url("../imgs/LAYER1_line_r9_c1.png");
+}
+/* line 157, ../../IN/styles/style.scss */
+.level1 .line_9 {
+  background-image: url("../imgs/LAYER1_line_r10_c1.png");
+}
+/* line 161, ../../IN/styles/style.scss */
+.level1 .line_10 {
+  background-image: url("../imgs/LAYER1_line_r11_c1.png");
+}
+/* line 165, ../../IN/styles/style.scss */
+.level1 .line_11 {
+  background-image: url("../imgs/LAYER1_line_r12_c1.png");
+}
+/* line 169, ../../IN/styles/style.scss */
+.level1 .line_12 {
+  background-image: url("../imgs/LAYER1_line_r13_c1.png");
+}
+/* line 173, ../../IN/styles/style.scss */
+.level1 .line_13 {
+  background-image: url("../imgs/LAYER1_line_r14_c1.png");
+}
+/* line 177, ../../IN/styles/style.scss */
+.level1 .line_14 {
+  background-image: url("../imgs/LAYER1_line_r15_c1.png");
+}

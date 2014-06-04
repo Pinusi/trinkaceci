@@ -50,27 +50,49 @@ body{
 	background-color: $light-blue;
 	background-image: url('../imgs/LEVEL0_cloud.png');
 	background-repeat: repeat;
-	background-position: fixed;
+	background-attachment: fixed;
+	margin: 0px;
 }
 
 .level1{
+	padding-top: 128px;
 	.title{
 		position: relative;
 		left: 50%;
-		width: 2px;
-		margin-left: -1px;
-		height: 460px;
-		margin-top: 128px;
+		width: 470px;
+		margin-left: -235px;
+		height: 150px;
 		.story{
 			font-family: $subtitles;
 			font-size: 33px;
 			position: absolute;
 			width: 150px;
-			left: -280px;
+			left: 0px;
 		}
-		.ceci, .andre{
+		.ceciandre{
 			font-family: $titles;
 			font-size: 90px;
+			position: absolute;
+			width: 300px;
+			.first_letter{
+				font-size: 150px;
+			}
+
+			.other_letter{
+				margin-left: -22px;
+			}
+		}
+
+		.ceci{
+			@extend .ceciandre;
+			top: -11px;
+			left: 0px;
+		}
+
+		.andre{
+			@extend .ceciandre;
+			top: 76px;
+			left: 190px;
 		}
 
 		.dot{
@@ -83,6 +105,77 @@ body{
 			height: 86px;
 			@include opacity(0.7);
 			@include border-radius(43px, 43px);
+			position: absolute;
+			top: 90px;
+			left: 259px;
 		}
+	}
+	.line{
+		position: relative;
+		background-repeat: no-repeat;
+		width: 846px;
+		height: 484px;
+		left: 50%;
+		margin-left: -423px;
+	}
+	.line_0{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r1_c1.png');
+	}
+	.line_1{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r2_c1.png');
+	}
+	.line_2{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r3_c1.png');
+	}
+	.line_3{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r4_c1.png');
+	}
+	.line_4{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r5_c1.png');
+	}
+	.line_5{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r6_c1.png');
+	}
+	.line_6{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r7_c1.png');
+	}
+	.line_7{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r8_c1.png');
+	}
+	.line_8{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r9_c1.png');
+	}
+	.line_9{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r10_c1.png');
+	}
+	.line_10{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r11_c1.png');
+	}
+	.line_11{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r12_c1.png');
+	}
+	.line_12{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r13_c1.png');
+	}
+	.line_13{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r14_c1.png');
+	}
+	.line_14{
+		@extend .line;
+		background-image: url('../imgs/LAYER1_line_r15_c1.png');
 	}
 }

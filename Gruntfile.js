@@ -107,7 +107,6 @@ module.exports = function(grunt) {
             httpGeneratedImagesPath: '/imgs/generated',
             httpFontsPath: '/styles/fonts',
             relativeAssets: false,
-            outputStyle: 'compressed',
             assetCacheBuster: false
         },
             server: {
@@ -122,10 +121,9 @@ module.exports = function(grunt) {
     // Run some tasks in parallel to speed up build process
     concurrent: {
       dist: [
-          'compass',
           'imagemin',
           'svgmin',
-          'cssmin'
+          'compass'
       ]
     },
 
@@ -201,12 +199,13 @@ module.exports = function(grunt) {
   
   grunt.registerTask('build', [
         'clean',
-        'wiredep',
         'jshint',
         'concurrent',
         'uglify',
         'concat',
-        'copy'
+        'cssmin',
+        'copy',
+        'wiredep'
     ]);
 
   // Default task(s).
