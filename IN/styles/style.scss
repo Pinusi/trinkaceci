@@ -7,6 +7,8 @@ $white: #FFFFFF;
 $orange: #FC4000;
 $subtitles: "shelter_meregular";
 $titles: "voluptate_demoregular";
+$text: "dk_sleepy_timeregular";
+$text_2:'janda_elegant_handwritingRg';
 
 /*FONTS*/
 @font-face {
@@ -45,6 +47,18 @@ $titles: "voluptate_demoregular";
 
 }
 
+@font-face {
+    font-family: 'janda_elegant_handwritingRg';
+    src: url('fonts/jandaeleganthandwriting-webfont.eot');
+    src: url('fonts/jandaeleganthandwriting-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/jandaeleganthandwriting-webfont.woff') format('woff'),
+         url('fonts/jandaeleganthandwriting-webfont.ttf') format('truetype'),
+         url('fonts/jandaeleganthandwriting-webfont.svg#janda_elegant_handwritingRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /*LAYER 0*/
 body{
 	background-color: $light-blue;
@@ -54,12 +68,15 @@ body{
 	margin: 0px;
 }
 
+/*LAYER 1*/
 .level1{
 	padding-top: 128px;
 	height: 8098px;
 	overflow: hidden;
 	position: relative;
 	@include box-sizing(border-box);
+
+	/*HEADER*/
 	.title{
 		position: relative;
 		left: 50%;
@@ -102,6 +119,7 @@ body{
 		.dot{
 			color: $white;
 			font-size: 40px;
+			font-family: $text_2;
 			background-color: $orange;
 			text-align: center;
 			line-height: 86px;
@@ -113,7 +131,9 @@ body{
 			top: 90px;
 			left: 259px;
 		}
-	}
+	}/*END HEADER*/
+
+	/*LINES*/
 	.line{
 		position: relative;
 		background-repeat: no-repeat;
@@ -181,8 +201,99 @@ body{
 	.line_14{
 		@extend .line;
 		background-image: url('../imgs/LAYER1_line_r15_c1.png');
+	}/*END LINES*/
+
+	/*SCROLL*/
+	.scroll{
+		position: absolute;
+		font-family: $text_2;
+		font-size: 25px;
+		color: $white;
+		background-color: $orange;
+		width: 98px;
+		height: 98px;
+		@include opacity(0.7);
+		@include border-radius(49px, 49px);
+		text-align: center;
+		padding-top: 35px;
+		line-height: 25px;
+		@include box-sizing(border-box);
+		left: 50%;
+		margin-left: -400px;
+		top: 440px;
+
+		.arrows{
+			background-image: url('../imgs/LEVEL1_arrows.png');
+			width: 52px;
+			height: 27px;
+			display: inline-block;
+		}
 	}
 
+	/*EVENTS*/
+	.event{
+		position: absolute;
+		width: 494px;
+		&.left{
+			text-align: right;
+			.content{
+				float: right;
+			}
+			.dot{
+				float: right;
+				margin-left: 20px;
+			}
+		}
+		&.right{
+			.content{
+				float: left;
+			}
+			.dot{
+				float: left;
+				margin-right: 20px;
+			}
+		}
+		.dot{
+			background-color: $orange;
+			width: 15px;
+			height: 15px;
+			@include border-radius(43px, 43px);
+		}
+		.content{
+			width: 458px;
+		}
+		.date{
+			color: $orange;
+			font-family: $subtitles;
+			font-size: 20px;
+			line-height: 20px;
+		}
+		.text{
+			font-family: $text;
+			font-size: 20px;
+		}
+	}
+
+	#event_1{
+		bottom: 0px;
+		margin-right: 53px;
+	}
+
+	#event_2{
+		margin-left: -4px;
+		top: 20px;
+	}
+
+	/*TRIGGERS*/
+	.trigger{
+		position: absolute;
+	}
+
+	#trigger_1{
+		bottom: 100px;
+	}
+
+	/*FOOTER*/
 	.bottom{
 		@include opacity(0);
 		position: relative;
@@ -221,5 +332,5 @@ body{
 			bottom: 0px;
 			z-index: 2;
 		}
-	}
+	}/*END FOOTER*/
 }
