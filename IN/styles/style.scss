@@ -1,5 +1,7 @@
 /*IMPORTS*/
 @import "compass";
+@import "mixin";
+@import "animations";
 
 /*VARIABLES*/
 $light-blue: #BFEFFF;
@@ -221,6 +223,11 @@ body{
 		left: 50%;
 		margin-left: -400px;
 		top: 440px;
+		@include animation-name(upDown);
+		@include animation-duration(1s);
+		@include animation-iteration-count(infinite);
+		@include animation-direction(alternate);
+		@include animation-timing-function(ease-out);
 
 		.arrows{
 			background-image: url('../imgs/LEVEL1_arrows.png');
@@ -253,6 +260,29 @@ body{
 				margin-right: 20px;
 			}
 		}
+		&.centre{
+			text-align: center;
+			left: 50%;
+
+			&.wedding{
+				visibility: inherit;
+				opacity: 1;
+				top: 100px;
+				width: 350px;
+				margin-left: -195px;
+
+				.date{
+					text-align: left;
+					color: #000;
+					line-height: 60px;
+				}
+				.event_title{
+					color: #000;
+					font-size: 61px;
+					line-height: 75px;
+				}
+			}
+		}
 		.dot{
 			background-color: $orange;
 			width: 15px;
@@ -270,7 +300,14 @@ body{
 		}
 		.text{
 			font-family: $text;
+			font-weight:bold;
 			font-size: 20px;
+		}
+		.event_title{
+			color: $orange;
+			line-height: 35px;
+			font-family: $titles;
+			font-size: 33px;
 		}
 	}
 
@@ -283,6 +320,87 @@ body{
 		margin-left: -4px;
 		top: 20px;
 	}
+	#event_3{
+		top: 220px;
+		width: 300px;
+		margin-left: -150px;
+	}
+
+	#event_5{
+		top: 50px;
+	}
+
+	#event_6{
+		bottom: 180px;
+	}
+
+	#event_7{
+		bottom:	0px;
+	}
+
+	#event_8{
+		width:370px;
+		margin-left:-185px;
+		top:60px
+	}
+
+	#event_9{
+		top: 300px
+	}
+
+	#event_10{
+		width:430px;
+		margin-left: -215px;
+		top: 125px;
+	}
+
+	#event_11{
+		bottom:	11px;
+	}
+
+	#event_18{
+		margin-left: -185px;
+		width: 370px;
+		top:280px;
+	}
+
+	#event_12{
+		top: 80px;
+	}
+
+	#event_13{
+		top: 120px;
+	}
+
+	#event_15{
+		top: 240px;
+	}
+
+	#event_16{
+		top: 330px;
+	}
+
+	#event_17{
+		top: 450px;
+	}
+
+	#event_19{
+		margin-left: -185px;
+		width: 370px;
+		top: 350px;
+	}
+
+	#event_22{
+		top: 190px;
+	}
+
+	#event_20{
+		top: 230px;
+	}
+
+	#event_21{
+		top: 400px;
+	}
 
 	/*TRIGGERS*/
 	.trigger{
@@ -291,6 +409,64 @@ body{
 
 	#trigger_1{
 		bottom: 100px;
+	}
+
+	#trigger_3{
+		top:150px;
+	}
+
+	#trigger_5{
+		top: 60px;
+	}
+	#trigger_6{
+		top: 200px;
+	}
+	#trigger_7{
+		top: 250px;
+	}
+
+	#trigger_9{
+		top:280px;
+	}
+
+	#trigger_11{
+		bottom:70px;
+	}
+
+	#trigger_18{
+		top: 120px;
+	}
+
+	#trigger_12{
+		top: 80px;
+	}
+
+	#trigger_13{
+		top: 120px;
+	}
+
+	#trigger_15{
+		top: 240px;
+	}
+
+	#trigger_16{
+		top: 330px;
+	}
+
+	#trigger_17{
+		top: 450px;
+	}
+
+	#trigger_20{
+		top:230px;
+	}
+
+	#trigger_22{
+		top: 190px;
+	}
+
+	#trigger_21{
+		top: 400px;
 	}
 
 	/*FOOTER*/
