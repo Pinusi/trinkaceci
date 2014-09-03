@@ -9,13 +9,49 @@ $white: #FFFFFF;
 $orange: #FC4000;
 $black: #000000;
 $flash-green: #7FFF00;
+$brown: #662A17;
 /*$subtitles: 'Open Sans', sans-serif;
 $titles: 'Open Sans', sans-serif;*/
-$text: 'Open Sans', sans-serif;
-$title:'janda_stylish_scriptregular';
+$text: "NeutraTextBookAlt", sans-serif;
+$title:'antrokasdemoregular';
+$sub-title:'NeutraTextTFBoldAlt';
 
 /*FONTS*/
 @font-face {
+    font-family: 'NeutraTextTFBoldAlt';
+    src: url('fonts/neutratexttfboldalt.eot');
+    src: url('fonts/neutratexttfboldalt.eot') format('embedded-opentype'),
+         url('fonts/neutratexttfboldalt.woff') format('woff'),
+         url('fonts/neutratexttfboldalt.ttf') format('truetype'),
+         url('fonts/neutratexttfboldalt.svg#NeutraTextTFBoldAlt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeutraTextBookAlt';
+    src: url('fonts/neutratextbookalt.eot');
+    src: url('fonts/neutratextbookalt.eot') format('embedded-opentype'),
+         url('fonts/neutratextbookalt.woff') format('woff'),
+         url('fonts/neutratextbookalt.ttf') format('truetype'),
+         url('fonts/neutratextbookalt.svg#NeutraTextBookAlt') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'antrokasdemoregular';
+    src: url('fonts/antrokas_demo-webfont.eot');
+    src: url('fonts/antrokas_demo-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/antrokas_demo-webfont.woff') format('woff'),
+         url('fonts/antrokas_demo-webfont.ttf') format('truetype'),
+         url('fonts/antrokas_demo-webfont.svg#antrokasdemoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*@font-face {
     font-family: 'janda_stylish_scriptregular';
     src: url('fonts/jandastylishscript-webfont.eot');
     src: url('fonts/jandastylishscript-webfont.eot?#iefix') format('embedded-opentype'),
@@ -25,7 +61,7 @@ $title:'janda_stylish_scriptregular';
     font-weight: normal;
     font-style: normal;
 
-}
+}*/
 
 /*@font-face {
     font-family: 'voluptate_demoregular';
@@ -106,10 +142,10 @@ body{
 			font-size: 43px;
 			position: absolute;
 			width: 233px;
-			left: 0;
+			left: 40px;
 		}
 		.ceciandre{
-			font-size: 100px;
+			font-size: 130px;
 			position: absolute;
 			width: 300px;
 			text-shadow: 2px 2px white;
@@ -123,13 +159,13 @@ body{
 
 		.andre{
 			@extend .ceciandre;
-			top: 176px;
-			left: 240px;
+			top: 146px;
+			left: 210px;
 		}
 
 		.dot{
 			color: $white;
-			font-size: 40px;
+			font-size: 70px;
 			font-family: $title;
 			background-color: $orange;
 			text-align: center;
@@ -218,7 +254,7 @@ body{
 	.scroll{
 		position: absolute;
 		font-family: $title;
-		font-size: 22px;
+		font-size: 25px;
 		color: $white;
 		background-color: $orange;
 		width: 98px;
@@ -292,7 +328,7 @@ body{
 			}
 		}
 		.dot{
-			background-color: $orange;
+			background-color: $brown;
 			width: 15px;
 			height: 15px;
 			@include border-radius(43px, 43px);
@@ -302,14 +338,17 @@ body{
 		}
 		.date{
 			color: $orange;
-			font-family: $text;
-			font-size: 20px;
-			line-height: 20px;
+			font-family: $sub-title;
+			color: $brown;
+			line-height: 25px;
 			text-transform: uppercase;
+			padding-bottom: 5px;
+			font-size: 20px;
 		}
 		.text{
 			font-family: $text;
 			font-size: 18px;
+			line-height: 20px;
 		}
 		.event_title{
 			color: $orange;
