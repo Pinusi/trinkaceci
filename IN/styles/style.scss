@@ -4,16 +4,30 @@
 @import "animations";
 
 /*VARIABLES*/
-$light-blue: #BFEFFF;
+$light-blue: #CCE1ED;
 $white: #FFFFFF;
 $orange: #FC4000;
-$subtitles: "shelter_meregular";
-$titles: "voluptate_demoregular";
-$text: "dk_sleepy_timeregular";
-$text_2:'janda_elegant_handwritingRg';
+$black: #000000;
+$flash-green: #7FFF00;
+/*$subtitles: 'Open Sans', sans-serif;
+$titles: 'Open Sans', sans-serif;*/
+$text: 'Open Sans', sans-serif;
+$title:'janda_stylish_scriptregular';
 
 /*FONTS*/
 @font-face {
+    font-family: 'janda_stylish_scriptregular';
+    src: url('fonts/jandastylishscript-webfont.eot');
+    src: url('fonts/jandastylishscript-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/jandastylishscript-webfont.woff') format('woff'),
+         url('fonts/jandastylishscript-webfont.ttf') format('truetype'),
+         url('fonts/jandastylishscript-webfont.svg#janda_stylish_scriptregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*@font-face {
     font-family: 'voluptate_demoregular';
     src: url('fonts/voluptate_demo-webfont.eot');
     src: url('fonts/voluptate_demo-webfont.eot?#iefix') format('embedded-opentype'),
@@ -59,7 +73,7 @@ $text_2:'janda_elegant_handwritingRg';
     font-weight: normal;
     font-style: normal;
 
-}
+}*/
 
 /*LAYER 0*/
 body{
@@ -77,6 +91,7 @@ body{
 	overflow: hidden;
 	position: relative;
 	@include box-sizing(border-box);
+	width: 100%;
 
 	/*HEADER*/
 	.title{
@@ -85,43 +100,37 @@ body{
 		width: 470px;
 		margin-left: -235px;
 		height: 150px;
+		font-family: $title;
+
 		.story{
-			font-family: $subtitles;
-			font-size: 33px;
+			font-size: 43px;
 			position: absolute;
-			width: 150px;
-			left: 0px;
+			width: 233px;
+			left: 0;
 		}
 		.ceciandre{
-			font-family: $titles;
-			font-size: 90px;
+			font-size: 100px;
 			position: absolute;
 			width: 300px;
-			.first_letter{
-				font-size: 150px;
-			}
-
-			.other_letter{
-				margin-left: -22px;
-			}
+			text-shadow: 2px 2px white;
 		}
 
 		.ceci{
 			@extend .ceciandre;
-			top: -11px;
-			left: 0px;
+			top: 59px;
+			left: 0;
 		}
 
 		.andre{
 			@extend .ceciandre;
-			top: 76px;
-			left: 190px;
+			top: 176px;
+			left: 240px;
 		}
 
 		.dot{
 			color: $white;
 			font-size: 40px;
-			font-family: $text_2;
+			font-family: $title;
 			background-color: $orange;
 			text-align: center;
 			line-height: 86px;
@@ -131,7 +140,7 @@ body{
 			@include border-radius(43px, 43px);
 			position: absolute;
 			top: 90px;
-			left: 259px;
+			left: 299px;
 		}
 	}/*END HEADER*/
 
@@ -208,8 +217,8 @@ body{
 	/*SCROLL*/
 	.scroll{
 		position: absolute;
-		font-family: $text_2;
-		font-size: 25px;
+		font-family: $title;
+		font-size: 22px;
 		color: $white;
 		background-color: $orange;
 		width: 98px;
@@ -273,13 +282,12 @@ body{
 
 				.date{
 					text-align: left;
-					color: #000;
 					line-height: 60px;
 				}
 				.event_title{
 					color: #000;
-					font-size: 61px;
-					line-height: 75px;
+					font-size: 81px;
+					line-height: 79px;
 				}
 			}
 		}
@@ -294,20 +302,20 @@ body{
 		}
 		.date{
 			color: $orange;
-			font-family: $subtitles;
+			font-family: $text;
 			font-size: 20px;
 			line-height: 20px;
+			text-transform: uppercase;
 		}
 		.text{
 			font-family: $text;
-			font-weight:bold;
-			font-size: 20px;
+			font-size: 18px;
 		}
 		.event_title{
 			color: $orange;
-			line-height: 35px;
-			font-family: $titles;
-			font-size: 33px;
+			line-height: 51px;
+			font-size: 39px;
+			font-family: $title;
 		}
 	}
 
@@ -405,6 +413,7 @@ body{
 	/*TRIGGERS*/
 	.trigger{
 		position: absolute;
+		margin-top: -200px;
 	}
 
 	#trigger_1{
@@ -509,4 +518,225 @@ body{
 			z-index: 2;
 		}
 	}/*END FOOTER*/
+
+	/*PARALLAX LEVELS*/
+	.parallax_container{
+		width: 802px;
+		height: 450px;
+		overflow: hidden;
+		position: relative;
+		left: 50%;
+		margin-left: -401px;
+		@include border-radius(25px, 25px);
+		background-color: $white;
+	}
+
+	.p_layer{
+		position: absolute;
+		height: 100%;
+		background-repeat:no-repeat;
+	}
+
+	#parallax1{
+		top: 203px;
+
+		.p_layer_1{
+			background-image: url('../imgs/PARALLAX1_Bg.png');
+			width: 100%;
+			background-position: 0% -100px;
+			z-index: 0;
+			background-repeat: repeat;
+		}
+
+		.p_layer_2{
+			background-image: url('../imgs/PARALLAX1_Main.png');
+			width: 804px;
+			background-position: 0% -235px;
+			z-index: 1;
+		}
+
+		.p_layer_3{
+			background-image: url('../imgs/PARALLAX1_Lines.png');
+			width: 804px;
+			background-position: 0% -500px;
+			z-index: 2;
+		}
+
+		.p_layer_4{
+			background-image: url('../imgs/PARALLAX1_Bbq.png');
+			width: 804px;
+			background-position: 0% -700px;
+			z-index: 3;
+		}
+
+		.p_layer_5{
+			background-image: url('../imgs/PARALLAX1_Icons.png');
+			width: 804px;
+			background-position: 0% 200px;
+			z-index: 4;
+		}
+	}
+
+	#parallax2{
+		top: 516px;
+
+		.p_layer_1{
+			background-image: url('../imgs/PARALLAX2_Bottom.png');
+			width: 100%;
+			background-position: 0% 10px;
+			z-index: 0;
+		}
+
+		.p_layer_5{
+			background-image: url('../imgs/PARALLAX2_Top.png');
+			width: 100%;
+			background-position: 0% -30px;
+			z-index: 0;
+		}
+
+		.p_layer_2{
+			background-image: url('../imgs/PARALLAX2_Menu.png');
+			width: 804px;
+			background-position: 0% 40px;
+			z-index: 2;
+		}
+
+		.p_layer_3{
+			background-image: url('../imgs/PARALLAX2_Pasta.png');
+			width: 804px;
+			background-position: 0% 60px;
+			z-index: 3;
+		}
+
+		.p_layer_4{
+			background-image: url('../imgs/PARALLAX2_Spoon.png');
+			width: 804px;
+			background-position: 0% 20px;
+			z-index: 1;
+		}
+	}
+
+	#parallax3{
+		top: 608px;
+
+		.p_layer_1{
+			background-image: url('../imgs/PARALLAX3_Bg.png');
+			width: 100%;
+			z-index: 0;
+		}
+
+		.p_layer_2{
+			background-image: url('../imgs/PARALLAX3_Snow1.png');
+			width: 804px;
+			background-position: 0% -237px;
+			z-index: 2;
+			height: 650px;
+		}
+
+		.p_layer_3{
+			background-image: url('../imgs/PARALLAX3_Snow2.png');
+			width: 804px;
+			background-position: 0% -443px;
+			z-index: 3;
+			height: 650px;
+		}
+
+		.p_layer_4{
+			background-image: url('../imgs/PARALLAX3_Snow2.png');
+			width: 804px;
+			background-position: 30px -443px;
+			z-index: 4;
+			height: 650px;
+		}
+	}
+
+	#parallax4{
+		bottom: 430px;
+
+		.p_layer_1{
+			background-image: url('../imgs/PARALLAX4_Bg.png');
+			width: 100%;
+			z-index: 0;
+		}
+
+		.p_layer_2{
+			background-image: url('../imgs/PARALLAX4_Train.png');
+			width: 804px;
+			background-position: -400px 0%;
+			z-index: 2;
+			height: 650px;
+		}
+
+		.p_layer_3{
+			background-image: url('../imgs/PARALLAX4_Front.png');
+			width: 100%;
+			z-index: 3;
+		}
+
+		.p_layer_4
+		{
+			font-family: $text;
+			padding: 30px;
+		}
+	}
+
+	#parallax5{
+		top: 183px;
+		background-color: $black;
+
+		.p_layer_1{
+			background-image: url('../imgs/PARALLAX5_Hand.png');
+			width: 100%;
+			z-index: 0;
+		}
+
+		.p_layer_2{
+			background-image: url('../imgs/PARALLAX5_Ring.png');
+			width: 33px;
+			height: 71px;
+			z-index: 2;
+		}
+
+		.p_layer_4
+		{
+			font-family: $text;
+			padding: 30px;
+			color: $flash-green;
+		}
+	}
 }
+
+.level2{
+		position: absolute;
+		top: 0px;
+		left:0px;
+
+		.relative{
+			position: relative;
+		}
+
+		#parallax_trigger1{
+			top: 1322px + 128px - 300px;
+			position: relative;
+		}
+
+		#parallax_trigger2{
+			top: 2735px - 300px;
+			position: relative;
+		}
+
+		#parallax_trigger3{
+			top: 3798px - 300px;
+			position: relative;
+		}
+
+		#parallax_trigger4{
+			top: 4693px - 300px;
+			position: relative;
+		}
+
+		#parallax_trigger5{
+			top: 6275px - 300px;
+			position: relative;
+		}
+	}

@@ -39,7 +39,35 @@ function includeTweens () {
 		tween_21 = TweenMax.fromTo("#event_21", 1, {left: -1000,}, {left: -60, repeat: 0, ease: Circ.easeInOut}),
 		tween_22 = TweenMax.fromTo("#event_22", 1, {right: -1000,}, {right: -89, repeat: 0, ease: Circ.easeInOut}),
 		tween_23 = TweenMax.fromTo("#event_23", 1, {autoAlpha:0}, {autoAlpha:1, repeat: 0, ease: Circ.easeInOut}),
-		tween_bottom = TweenMax.to("#bottom", 0.5, {autoAlpha:1});
+		tween_bottom = TweenMax.to("#bottom", 0.5, {autoAlpha:1}),
+		parallax1 = new TimelineMax ()
+			.add([
+				TweenMax.to("#parallax1 .p_layer_1", 1, {backgroundPosition: "0 100px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax1 .p_layer_2", 1, {backgroundPosition: "0 250px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax1 .p_layer_3", 1, {backgroundPosition: "0 500px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax1 .p_layer_4", 1, {backgroundPosition: "0 700px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax1 .p_layer_5", 1, {backgroundPosition: "0 -200px", ease: Linear.easeNone})
+			]),
+
+		parallax2 = new TimelineMax ()
+			.add([
+				TweenMax.to("#parallax2 .p_layer_1", 1, {backgroundPosition: "0 -10px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax2 .p_layer_2", 1, {backgroundPosition: "0 -40px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax2 .p_layer_3", 1, {backgroundPosition: "0 -60px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax2 .p_layer_4", 1, {backgroundPosition: "0 -20px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax2 .p_layer_5", 1, {backgroundPosition: "0 -10px", ease: Linear.easeNone})
+			]),
+		parallax3 = new TimelineMax ()
+			.add([
+				TweenMax.to("#parallax3 .p_layer_2", 1, {backgroundPosition: "0 -373px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax3 .p_layer_3", 1, {backgroundPosition: "0 -167px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax3 .p_layer_4", 1, {backgroundPosition: "0 -167px", ease: Linear.easeNone})
+			]),
+		parallax4 = new TimelineMax ()
+			.add([
+				TweenMax.to("#parallax4 .p_layer_2", 1, {backgroundPosition: "0px 0", ease: Linear.easeNone})
+			]),
+		parallax5 = TweenMax.fromTo("#parallax5 .p_layer_2", 1, {right: 3000, top: 600}, {right: 436, top: 159, repeat: 0, ease: Circ.easeInOut});
 
 	//Scenes
 	var scene_1 = new ScrollScene({triggerElement: "#trigger_1"}).setTween(tween_1),
@@ -65,7 +93,18 @@ function includeTweens () {
 		scene_21 = new ScrollScene({triggerElement: "#trigger_21"}).setTween(tween_21),
 		scene_22 = new ScrollScene({triggerElement: "#trigger_22"}).setTween(tween_22),
 		scene_23 = new ScrollScene({triggerElement: "#trigger_23"}).setTween(tween_23),
-		scene_bottom = new ScrollScene({triggerElement: "#trigger_bottom"}).setTween(tween_bottom);
+		scene_bottom = new ScrollScene({triggerElement: "#trigger_bottom"}).setTween(tween_bottom),
+		parallax1_scene = new ScrollScene({triggerElement: "#parallax_trigger1", duration: 1050})
+						.setTween(parallax1),
+						// .setPin(".level1");
+		parallax2_scene = new ScrollScene({triggerElement: "#parallax_trigger2", duration: 1050})
+						.setTween(parallax2),
+		parallax3_scene = new ScrollScene({triggerElement: "#parallax_trigger3", duration: 1050})
+						.setTween(parallax3),
+		parallax4_scene = new ScrollScene({triggerElement: "#parallax_trigger4", duration: 1050})
+						.setTween(parallax4),
+		parallax5_scene = new ScrollScene({triggerElement: "#parallax_trigger5", duration: 525})
+						.setTween(parallax5);
 
     //Add to controller
 	controller.addScene
@@ -75,13 +114,16 @@ function includeTweens () {
 			scene_2,
 			scene_3,
 			scene_4,
+			parallax1_scene,
 			scene_5,
 			scene_6,
 			scene_7,
 			scene_8,
 			scene_9,
+			parallax2_scene,
 			scene_10,
 			scene_11,
+			parallax3_scene,
 			scene_12,
 			scene_13,
 			scene_14,
@@ -89,7 +131,9 @@ function includeTweens () {
 			scene_16,
 			scene_17,
 			scene_18,
+			parallax4_scene,
 			scene_19,
+			parallax5_scene,
 			scene_20,
 			scene_21,
 			scene_22,
@@ -99,6 +143,5 @@ function includeTweens () {
 	);
 
 	// show indicators (requires debug extension)
-	scene_11.addIndicators();
-	scene_12.addIndicators();
+	parallax5_scene.addIndicators();
 }
