@@ -60,8 +60,11 @@ function includeTweens () {
 		parallax3 = new TimelineMax ()
 			.add([
 				TweenMax.to("#parallax3 .p_layer_2", 1, {backgroundPosition: "0 -373px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax3 .p_layer_7", 1, {backgroundPosition: "0 -373px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax3 .p_layer_5", 1, {backgroundPosition: "0 -373px", ease: Linear.easeNone}),
 				TweenMax.to("#parallax3 .p_layer_3", 1, {backgroundPosition: "0 -167px", ease: Linear.easeNone}),
-				TweenMax.to("#parallax3 .p_layer_4", 1, {backgroundPosition: "0 -167px", ease: Linear.easeNone})
+				TweenMax.to("#parallax3 .p_layer_4", 1, {backgroundPosition: "0 -307px", ease: Linear.easeNone}),
+				TweenMax.to("#parallax3 .p_layer_6", 1, {backgroundPosition: "0 -500px", ease: Linear.easeNone})
 			]),
 		parallax4 = new TimelineMax ()
 			.add([
@@ -141,7 +144,4 @@ function includeTweens () {
 			scene_bottom
 		]
 	);
-
-	// show indicators (requires debug extension)
-	parallax5_scene.addIndicators();
 }

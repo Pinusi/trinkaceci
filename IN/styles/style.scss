@@ -120,14 +120,88 @@ body{
 	margin: 0px;
 }
 
+/*MOBILE*/
+.level_mobile{
+	display: none;
+	text-align: center;
+	padding: 30px 10px;
+
+	@media(max-width: 850px){
+		display:block;
+	}
+
+	.disclaimer{
+		font-family: $sub-title;
+		margin-top: 50px;
+		margin-bottom: 20px;
+		color: $brown;
+		font-size: 20px;
+		line-height: 22px;
+	}
+
+	.wedding_info{
+		font-family: $text;
+		text-align: center;
+		font-size: 18px;
+		line-height: 20px;
+
+		.info_addr{
+			font-size: 14px;
+		}
+
+		.info_title{
+			font-family: $sub-title;
+			text-transform: uppercase;
+		}
+
+		.presents{
+			font-family: $title;
+			font-size: 43px;
+			line-height: 60px;
+			margin-top: 20px;
+			text-shadow: 2px 2px #fff;
+		}
+
+		.church_d{
+			font-size: 22px;
+			margin-bottom: 10px;
+			line-height: 24px;
+		}
+
+		.church{
+			font-size: 26px;
+			line-height: 30px;
+		}
+
+		.church_h{
+			font-size: 40px;
+			line-height: 45px;
+		}
+
+		.presents_ag{
+			font-size: 25px;
+			line-height: 30px;
+			margin-top: 5px;
+		}
+
+		a{
+			color: $orange;
+		}
+	}
+}
+
 /*LAYER 1*/
 .level1{
 	padding-top: 128px;
-	height: 8098px;
+	height: 8300px;
 	overflow: hidden;
 	position: relative;
 	@include box-sizing(border-box);
 	width: 100%;
+
+	@media(max-width: 850px){
+		display:none;
+	}
 
 	/*HEADER*/
 	.title{
@@ -282,6 +356,25 @@ body{
 		}
 	}
 
+	.link_to_info{
+		position: absolute;
+		font-family: $title;
+		font-size: 25px;
+		color: $white;
+		background-color: $brown;
+		width: 78px;
+		height: 78px;
+		@include opacity(0.7);
+		@include border-radius(39px, 39px);
+		text-align: center;
+		padding-top: 29px;
+		line-height: 25px;
+		@include box-sizing(border-box);
+		top: 20px;
+		right: 20px;
+		text-decoration: none;
+	}
+
 	/*EVENTS*/
 	.event{
 		position: absolute;
@@ -318,12 +411,14 @@ body{
 
 				.date{
 					text-align: left;
-					line-height: 60px;
+					line-height: 30px;
+					color: $orange;
 				}
 				.event_title{
 					color: #000;
 					font-size: 81px;
 					line-height: 79px;
+					text-shadow: 2px 2px white;
 				}
 			}
 		}
@@ -334,7 +429,7 @@ body{
 			@include border-radius(43px, 43px);
 		}
 		.content{
-			width: 458px;
+			width: 360px;
 		}
 		.date{
 			color: $orange;
@@ -344,6 +439,23 @@ body{
 			text-transform: uppercase;
 			padding-bottom: 5px;
 			font-size: 20px;
+			
+			.lw{
+				text-transform: lowercase;
+				position: relative;
+				top: 0px;
+			}
+
+			span{
+				position: relative;
+				top: 7px;
+				display: inline-block;
+				margin: 0px 5px;
+			}
+
+			&.inTheBubble{
+				margin-bottom: 10px;
+			}
 		}
 		.text{
 			font-family: $text;
@@ -352,8 +464,8 @@ body{
 		}
 		.event_title{
 			color: $orange;
-			line-height: 51px;
-			font-size: 39px;
+			line-height: 45px;
+			font-size: 40px;
 			font-family: $title;
 		}
 	}
@@ -369,8 +481,8 @@ body{
 	}
 	#event_3{
 		top: 220px;
-		width: 300px;
-		margin-left: -150px;
+		width: 320px;
+		margin-left: -160px;
 	}
 
 	#event_5{
@@ -382,7 +494,7 @@ body{
 	}
 
 	#event_7{
-		bottom:	0px;
+		bottom: 60px;
 	}
 
 	#event_8{
@@ -432,9 +544,9 @@ body{
 	}
 
 	#event_19{
-		margin-left: -185px;
-		width: 370px;
-		top: 350px;
+		margin-left: -180px;
+		width: 360px;
+		top: 335px;
 	}
 
 	#event_22{
@@ -452,33 +564,48 @@ body{
 	/*TRIGGERS*/
 	.trigger{
 		position: absolute;
-		margin-top: -200px;
 	}
 
 	#trigger_1{
-		bottom: 100px;
+		bottom: 350px;
+	}
+
+	#trigger_2{
+		top: -250px;
 	}
 
 	#trigger_3{
-		top:150px;
+		top: 20px;
+	}
+
+	#trigger_4{
+		top: -250px;
 	}
 
 	#trigger_5{
-		top: 60px;
+		top:  0px;
 	}
 	#trigger_6{
-		top: 200px;
+		top: 20px;
 	}
 	#trigger_7{
-		top: 250px;
+		top: 20px;
+	}
+
+	#trigger_8{
+		top: -100px;
 	}
 
 	#trigger_9{
-		top:280px;
+		top: 150px;
+	}
+
+	#trigger_10{
+		top: -150px;
 	}
 
 	#trigger_11{
-		bottom:70px;
+		bottom: 240px;
 	}
 
 	#trigger_18{
@@ -486,27 +613,31 @@ body{
 	}
 
 	#trigger_12{
-		top: 80px;
+		top: -140px;
 	}
 
-	#trigger_13{
+	/*#trigger_13{
 		top: 120px;
-	}
+	}*/
 
 	#trigger_15{
-		top: 240px;
+		top: 100px;
 	}
 
-	#trigger_16{
+	/*#trigger_16{
 		top: 330px;
-	}
+	}*/
 
 	#trigger_17{
-		top: 450px;
+		top: 250px;
+	}
+
+	#trigger_19{
+		top: 200px;
 	}
 
 	#trigger_20{
-		top:230px;
+		top: 230px;
 	}
 
 	#trigger_22{
@@ -514,7 +645,12 @@ body{
 	}
 
 	#trigger_21{
-		top: 400px;
+		top: 320px;
+	}
+
+	#trigger_bottom{
+		position: relative;
+		top: -240px;
 	}
 
 	/*FOOTER*/
@@ -522,7 +658,7 @@ body{
 		@include opacity(0);
 		position: relative;
 		height: 743px;
-		top: -178px;
+		top: 22px;
 		.andre{
 			background-image: url('../imgs/BOTTOM_andre.png');
 			background-repeat: no-repeat;
@@ -533,6 +669,61 @@ body{
 			left: 50%;
 			margin-left: -590px;
 			bottom: 12px;
+		}
+
+		.wedding_info{
+			font-family: $text;
+			width: 300px;
+			right: 50%;
+			text-align: center;
+			font-size: 18px;
+			line-height: 20px;
+			position: absolute;
+			margin-right: 70px;
+			top: -160px;
+
+			.info_addr{
+				font-size: 14px;
+			}
+
+			.info_title{
+				font-family: $sub-title;
+				text-transform: uppercase;
+			}
+
+			.presents{
+				font-family: $title;
+				font-size: 43px;
+				line-height: 60px;
+				margin-top: 20px;
+				text-shadow: 2px 2px #fff;
+			}
+
+			.church_d{
+				font-size: 22px;
+				margin-bottom: 10px;
+				line-height: 24px;
+			}
+
+			.church{
+				font-size: 26px;
+				line-height: 30px;
+			}
+
+			.church_h{
+				font-size: 40px;
+				line-height: 45px;
+			}
+
+			.presents_ag{
+				font-size: 25px;
+				line-height: 30px;
+				margin-top: 5px;
+			}
+
+			a{
+				color: $orange;
+			}
 		}
 
 		.ceci{
@@ -672,6 +863,15 @@ body{
 			height: 650px;
 		}
 
+		.p_layer_7{
+			background-image: url('../imgs/PARALLAX3_Snow1.png');
+			width: 804px;
+			background-position: 0% -237px;
+			z-index: 2;
+			height: 650px;
+			margin-left: 100px
+		}
+
 		.p_layer_3{
 			background-image: url('../imgs/PARALLAX3_Snow2.png');
 			width: 804px;
@@ -683,9 +883,25 @@ body{
 		.p_layer_4{
 			background-image: url('../imgs/PARALLAX3_Snow2.png');
 			width: 804px;
-			background-position: 30px -443px;
+			background-position: 0 -443px;
 			z-index: 4;
 			height: 650px;
+		}
+		.p_layer_5{
+			background-image: url('../imgs/PARALLAX3_Snow2.png');
+			width: 804px;
+			background-position: 0 -443px;
+			z-index: 7;
+			height: 650px;
+			margin-left: -100px;
+		}
+		.p_layer_6{
+			background-image: url('../imgs/PARALLAX3_Snow2.png');
+			width: 804px;
+			background-position: 0 -443px;
+			z-index: 4;
+			height: 650px;
+			margin-left: 100px;
 		}
 	}
 
@@ -716,6 +932,11 @@ body{
 		{
 			font-family: $text;
 			padding: 30px;
+			width: 300px;
+			right: 0px;
+			text-align: right;
+			font-size: 18px;
+			line-height: 20px;
 		}
 	}
 
@@ -740,6 +961,11 @@ body{
 		{
 			font-family: $text;
 			padding: 30px;
+			width: 300px;
+			left: 0px;
+			text-align: left;
+			font-size: 18px;
+			line-height: 20px;
 			color: $flash-green;
 		}
 	}
