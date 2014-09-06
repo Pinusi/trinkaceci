@@ -10,8 +10,7 @@ $orange: #FC4000;
 $black: #000000;
 $flash-green: #7FFF00;
 $brown: #662A17;
-/*$subtitles: 'Open Sans', sans-serif;
-$titles: 'Open Sans', sans-serif;*/
+$time_delta: 100px;
 $text: "NeutraTextBookAlt", sans-serif;
 $title:'antrokasdemoregular';
 $sub-title:'NeutraTextTFBoldAlt';
@@ -124,7 +123,7 @@ body{
 .level_mobile{
 	display: none;
 	text-align: center;
-	padding: 30px 10px;
+	padding: 50px 10px;
 
 	@media(max-width: 850px){
 		display:block;
@@ -567,53 +566,53 @@ body{
 	}
 
 	#trigger_1{
-		bottom: 350px;
+		bottom: 350px + $time_delta;
 	}
 
 	#trigger_2{
-		top: -250px;
+		top: -250px - $time_delta;
 	}
 
 	#trigger_3{
-		top: 20px;
+		top: 20px - $time_delta;
 	}
 
 	#trigger_4{
-		top: -250px;
+		top: -250px - $time_delta;
 	}
 
 	#trigger_5{
-		top:  0px;
+		top:  0px - $time_delta;
 	}
 	#trigger_6{
-		top: 20px;
+		top: 20px - $time_delta;
 	}
 	#trigger_7{
-		top: 20px;
+		top: 20px - $time_delta;
 	}
 
 	#trigger_8{
-		top: -100px;
+		top: -100px - $time_delta;
 	}
 
 	#trigger_9{
-		top: 150px;
+		top: 150px - $time_delta;
 	}
 
 	#trigger_10{
-		top: -150px;
+		top: -150px - $time_delta;
 	}
 
 	#trigger_11{
-		bottom: 240px;
+		bottom: 240px + $time_delta;
 	}
 
 	#trigger_18{
-		top: 120px;
+		top: 120px - $time_delta;
 	}
 
 	#trigger_12{
-		top: -140px;
+		top: -140px - $time_delta;
 	}
 
 	/*#trigger_13{
@@ -621,7 +620,7 @@ body{
 	}*/
 
 	#trigger_15{
-		top: 100px;
+		top: 100px - $time_delta;
 	}
 
 	/*#trigger_16{
@@ -629,28 +628,28 @@ body{
 	}*/
 
 	#trigger_17{
-		top: 250px;
+		top: 250px - $time_delta;
 	}
 
 	#trigger_19{
-		top: 200px;
+		top: 200px - $time_delta;
 	}
 
 	#trigger_20{
-		top: 230px;
+		top: 230px - $time_delta;
 	}
 
 	#trigger_22{
-		top: 190px;
+		top: 190px - $time_delta;
 	}
 
 	#trigger_21{
-		top: 320px;
+		top: 320px - $time_delta;
 	}
 
 	#trigger_bottom{
 		position: relative;
-		top: -240px;
+		top: -240px - $time_delta;
 	}
 
 	/*FOOTER*/
