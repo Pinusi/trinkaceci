@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   // Time how long tasks take. Can help when optimizing build times
-    require('time-grunt')(grunt);
+  require('time-grunt')(grunt);
 
   // Project configuration.
   grunt.initConfig({
@@ -11,14 +11,15 @@ module.exports = function(grunt) {
     //Cartelle
     cartelle: {
       development: 'IN',
-      distribution: 'OUT'
+      distribution: 'OUT',
+      temporary: '.tmp'
     },
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
           files: ['<%= cartelle.development %>/scripts/{,*/}*.js'],
-          tasks: ['jshint','uglify','concat'],
+          tasks: ['jshint','uglify'],
           options: {
               livereload: true
           }
@@ -48,6 +49,7 @@ module.exports = function(grunt) {
               '<%= cartelle.distribution %>/{,*/}*.html',
               '<%= cartelle.distribution %>/styles/{,*/}*.css',
               '<%= cartelle.distribution %>/scripts/{,*/}*.js',
+              '<%= cartelle.distribution %>/vtt/**',
               '<%= cartelle.distribution %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
           ]
       }
@@ -71,19 +73,26 @@ module.exports = function(grunt) {
       }
     },
 
-    wiredep: {
-      target: {
-        src: 'IN/index.html' // point to your HTML file.
+    // wiredep: {
+    //   target: {
+    //     src: 'IN/index.html' // point to your HTML file.
+    //   }
+    // },
+    
+    bower_concat: {
+      all: {
+        dest: '<%= cartelle.temporary %>/scripts/bower.js'
       }
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
        options: {
-          curly: true,
-          eqeqeq: true,
+          // curly: true,
+          // eqeqeq: true,
           eqnull: true,
           browser: true,
+          smarttabs: true,
           globals: {
             jQuery: true
           },
@@ -109,11 +118,11 @@ module.exports = function(grunt) {
             relativeAssets: false,
             assetCacheBuster: false
         },
-            server: {
-                options: {
-                    debugInfo: false
-                }
+        server: {
+            options: {
+                debugInfo: false
             }
+        }
     },
 
     pkg: grunt.file.readJSON('package.json'),
@@ -161,28 +170,47 @@ module.exports = function(grunt) {
                     '*.{ico,png,txt}',
                     '{,*/}*.html',
                     'styles/fonts/{,*/}*.*',
-                    'scripts/bower_components/**'
+                    'videos/**',
+                    'vtt/**'
                 ]
             }]
         }
     },
 
     uglify: {
-      build: {
-        src: '<%= cartelle.development %>/scripts/scripts.js',
-        dest: '<%= cartelle.distribution %>/scripts/scripts.min.js'
+      options: {
+        beautify: true,
+        mangle: false
+      },
+      bower: {
+        files: {
+          '<%= cartelle.distribution %>/scripts/bower.min.js': ['<%= cartelle.temporary %>/scripts/bower.js']
+        }
+      },
+      scripts: {
+        files: {
+          '<%= cartelle.distribution %>/scripts/scripts.min.js': ['<%= cartelle.development %>/scripts/**.js']
+        }
       }
     },
 
-    concat: {
-      dist: {}
-    },
+    // 'ftp-deploy': {
+    //     build: {
+    //       auth: {
+    //         host: '23.229.173.40',
+    //         port: 21,
+    //         authKey: 'key1'
+    //       },
+    //       src: '<%= cartelle.distribution %>',
+    //       dest: 'public_html/test'
+    //     }
+    // },
 
     cssmin: {
       dist: {
           files: {
               '<%= cartelle.distribution %>/styles/main.css': [
-                  '.tmp/styles/{,*/}*.css',
+                  '<%= cartelle.temporary %>/styles/{,*/}*.css',
                   '<%= cartelle.development %>/styles/{,*/}*.css'
               ]
           }
@@ -191,7 +219,7 @@ module.exports = function(grunt) {
 
     // Empties folders to start fresh
     clean: [
-            '.tmp',
+            '<%= cartelle.temporary %>',
             '<%= cartelle.distribution %>/*',
             '!<%= cartelle.distribution %>/.git*'
             ]
@@ -201,11 +229,11 @@ module.exports = function(grunt) {
         'clean',
         'jshint',
         'concurrent',
-        'uglify',
-        'concat',
+        'uglify:scripts',
+        'bower_concat',
+        'uglify:bower',
         'cssmin',
-        'copy',
-        'wiredep'
+        'copy'
     ]);
 
   // Default task(s).
@@ -214,5 +242,4 @@ module.exports = function(grunt) {
     'connect:livereload',
     'watch'
     ]);
-
 };
