@@ -25,18 +25,23 @@ module.exports = function(grunt) {
           }
       },
       gruntfile: {
-          files: ['Gruntfile.js']
+          files: ['Gruntfile.js'],
+          tasks: ['build']
       },
       compass: {
           files: ['<%= cartelle.development %>/styles/{,*/}*.{scss,sass}'],
           tasks: ['compass', 'cssmin']
+      },
+      images: {
+          files: ['<%= cartelle.development %>/imgs/{,*/}*.{gif,jpeg,jpg,png}'],
+          tasks: ['concurrent']
       },
       styles: {
           files: ['<%= cartelle.development %>/styles/{,*/}*.css'],
           tasks: ['cssmin']
       },
       other:{
-        files: ['<%= cartelle.development %>imgs/*.{ico,png,txt}',
+        files: ['<%= cartelle.development %>imgs/*.{ico,txt}',
                 '<%= cartelle.development %>/{,*/}*.html',
                 '<%= cartelle.development %>styles/fonts/{,*/}*.*'],
         tasks: ['copy']
@@ -49,7 +54,6 @@ module.exports = function(grunt) {
               '<%= cartelle.distribution %>/{,*/}*.html',
               '<%= cartelle.distribution %>/styles/{,*/}*.css',
               '<%= cartelle.distribution %>/scripts/{,*/}*.js',
-              '<%= cartelle.distribution %>/vtt/**',
               '<%= cartelle.distribution %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
           ]
       }
@@ -171,7 +175,7 @@ module.exports = function(grunt) {
                 cwd: '<%= cartelle.development %>',
                 dest: '<%= cartelle.distribution %>',
                 src: [
-                    '*.{ico,png,txt}',
+                    'imgs/*.{ico,txt}',
                     '{,*/}*.html',
                     'styles/fonts/*'
                 ]
