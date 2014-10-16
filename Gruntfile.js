@@ -36,7 +36,7 @@ module.exports = function(grunt) {
           tasks: ['cssmin']
       },
       other:{
-        files: ['<%= cartelle.development %>*.{ico,png,txt}',
+        files: ['<%= cartelle.development %>imgs/*.{ico,png,txt}',
                 '<%= cartelle.development %>/{,*/}*.html',
                 '<%= cartelle.development %>styles/fonts/{,*/}*.*'],
         tasks: ['copy']
@@ -52,6 +52,21 @@ module.exports = function(grunt) {
               '<%= cartelle.distribution %>/vtt/**',
               '<%= cartelle.distribution %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
           ]
+      }
+    },
+
+    bower_concat: {
+      all: {
+        dest: '<%= cartelle.development %>/scripts/bower.js',
+        include: [
+          "modernizr",
+          "jquery",
+          "ScrollMagic",
+          "gsap"
+        ],
+        bowerOptions: {
+          relative: false
+        }
       }
     },
 
@@ -73,6 +88,7 @@ module.exports = function(grunt) {
       }
     },
 
+<<<<<<< HEAD
     // wiredep: {
     //   target: {
     //     src: 'IN/index.html' // point to your HTML file.
@@ -85,6 +101,8 @@ module.exports = function(grunt) {
       }
     },
 
+=======
+>>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
        options: {
@@ -92,14 +110,19 @@ module.exports = function(grunt) {
           // eqeqeq: true,
           eqnull: true,
           browser: true,
+<<<<<<< HEAD
           smarttabs: true,
+=======
+          smarttabs:true,
+>>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
           globals: {
             jQuery: true
           },
         },
         all: [
             'Gruntfile.js',
-            '<%= cartelle.development %>/scripts/{,*/}*.js'
+            '<%= cartelle.development %>/scripts/{,*/}*.js',
+            '!<%= cartelle.development %>/scripts/bower.js'
         ]
     },
 
@@ -169,15 +192,20 @@ module.exports = function(grunt) {
                 src: [
                     '*.{ico,png,txt}',
                     '{,*/}*.html',
+<<<<<<< HEAD
                     'styles/fonts/{,*/}*.*',
                     'videos/**',
                     'vtt/**'
+=======
+                    'styles/fonts/*'
+>>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
                 ]
             }]
         }
     },
 
     uglify: {
+<<<<<<< HEAD
       options: {
         beautify: true,
         mangle: false
@@ -190,6 +218,12 @@ module.exports = function(grunt) {
       scripts: {
         files: {
           '<%= cartelle.distribution %>/scripts/scripts.min.js': ['<%= cartelle.development %>/scripts/**.js']
+=======
+      build: {
+        files: {
+          '<%= cartelle.distribution %>/scripts/scripts.min.js': ['<%= cartelle.development %>/scripts/scripts.js'],
+          '<%= cartelle.distribution %>/scripts/bower.min.js': ['<%= cartelle.development %>/scripts/bower.js']
+>>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
         }
       }
     },
@@ -228,6 +262,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
         'clean',
         'jshint',
+        "bower_concat",
         'concurrent',
         'uglify:scripts',
         'bower_concat',
