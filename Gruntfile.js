@@ -87,22 +87,7 @@ module.exports = function(grunt) {
           }
       }
     },
-
-<<<<<<< HEAD
-    // wiredep: {
-    //   target: {
-    //     src: 'IN/index.html' // point to your HTML file.
-    //   }
-    // },
     
-    bower_concat: {
-      all: {
-        dest: '<%= cartelle.temporary %>/scripts/bower.js'
-      }
-    },
-
-=======
->>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
        options: {
@@ -110,14 +95,10 @@ module.exports = function(grunt) {
           // eqeqeq: true,
           eqnull: true,
           browser: true,
-<<<<<<< HEAD
-          smarttabs: true,
-=======
           smarttabs:true,
->>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
           globals: {
             jQuery: true
-          },
+          }
         },
         all: [
             'Gruntfile.js',
@@ -192,20 +173,13 @@ module.exports = function(grunt) {
                 src: [
                     '*.{ico,png,txt}',
                     '{,*/}*.html',
-<<<<<<< HEAD
-                    'styles/fonts/{,*/}*.*',
-                    'videos/**',
-                    'vtt/**'
-=======
                     'styles/fonts/*'
->>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
                 ]
             }]
         }
     },
 
     uglify: {
-<<<<<<< HEAD
       options: {
         beautify: true,
         mangle: false
@@ -218,12 +192,6 @@ module.exports = function(grunt) {
       scripts: {
         files: {
           '<%= cartelle.distribution %>/scripts/scripts.min.js': ['<%= cartelle.development %>/scripts/**.js']
-=======
-      build: {
-        files: {
-          '<%= cartelle.distribution %>/scripts/scripts.min.js': ['<%= cartelle.development %>/scripts/scripts.js'],
-          '<%= cartelle.distribution %>/scripts/bower.min.js': ['<%= cartelle.development %>/scripts/bower.js']
->>>>>>> 719dcf897ec3acc843fc074e15fa964a8a40ba56
         }
       }
     },
