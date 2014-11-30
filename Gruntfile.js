@@ -61,7 +61,7 @@ module.exports = function(grunt) {
 
     bower_concat: {
       all: {
-        dest: '<%= cartelle.development %>/scripts/bower.js',
+        dest: '<%= cartelle.distribution %>/scripts/bower.min.js',
         include: [
           "modernizr",
           "jquery",
